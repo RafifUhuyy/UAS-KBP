@@ -1,0 +1,143 @@
+:root {
+    --primary: #4e73df;
+    --success: #1cc88a;
+    --dark: #2c3e50;
+    --light: #f8f9fc;
+    --gray: #858796;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--light);
+    margin: 0;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: var(--dark);
+    height: 100vh;
+    color: white;
+    padding: 30px 20px;
+    position: fixed;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.sidebar nav li {
+    list-style: none;
+    padding: 15px 0;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar nav li.active {
+    color: white;
+    font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 240px; /* Jarak pas seukuran sidebar */
+    padding: 40px;
+    width: calc(100% - 240px);
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* Card Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.item-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--primary);
+}
+
+.item-card:hover {
+    transform: translateY(-8px);
+}
+
+.category-tag {
+    background: #eef2ff;
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.item-card h3 {
+    margin: 15px 0 5px 0;
+    color: var(--dark);
+}
+
+.price {
+    font-size: 1.25rem;
+    color: var(--success);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.stock-info {
+    font-size: 0.9rem;
+    color: var(--gray);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-edit { background: #f6c23e; color: white; }
+.btn-del { background: #e74a3b; color: white; }
+.add-btn {
+    background: var(--primary);
+    color: white;
+    padding: 12px 15px; /* Sesuaikan padding agar muat di sidebar */
+    border-radius: 8px;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    box-sizing: border-box; /* Sangat penting agar tombol tidak 'offside' dari sidebar */
+}
+
+.add-btn:hover {
+    background: #3a53c4; /* Warna sedikit lebih gelap saat hover */
+}
+
